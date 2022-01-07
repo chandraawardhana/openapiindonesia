@@ -1,9 +1,6 @@
 package com.indonesia.openapi.controller.perguruantinggi;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import com.indonesia.openapi.help.ResponeUtil;
+import java.util.List;
 import com.indonesia.openapi.model.perguruantinggi.perguruantinggi;
 import com.indonesia.openapi.service.perguruantinggi.PTService;
 
@@ -26,59 +23,51 @@ public class PTController {
 
     @GetMapping("/list/all")
     public ResponseEntity<?> getAllPerguruanTinggi(){
-        Map map = new HashMap();
-        map.put("list", ptService.findAll());
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.findAll();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/list/nama")
     public ResponseEntity<?> findByNama(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTNama(Perguruantinggi.getNama()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list =  ptService.getPTNama(Perguruantinggi.getNama());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     
     @PostMapping("/list/provinsi")
     public ResponseEntity<?> findByprovinsi(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTProvinsi(Perguruantinggi.getProvinsi()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTProvinsi(Perguruantinggi.getProvinsi());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/list/kabupatenkota")
     public ResponseEntity<?> findByKabupatenkota(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTKabupatenkota(Perguruantinggi.getKabupatenkota()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTKabupatenkota(Perguruantinggi.getKabupatenkota());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
     
     @PostMapping("/list/namadanprovinsi")
     public ResponseEntity<?> findByNamaProvinsi(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTNamaProvinsi( Perguruantinggi.getNama(), Perguruantinggi.getProvinsi()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTNamaProvinsi( Perguruantinggi.getNama(), Perguruantinggi.getProvinsi());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/list/namadankabupatenkota")
     public ResponseEntity<?> findByNamaKabupatenkota(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTNamaKabupatenkota(Perguruantinggi.getNama(), Perguruantinggi.getKabupatenkota()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTNamaKabupatenkota(Perguruantinggi.getNama(), Perguruantinggi.getKabupatenkota());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/list/provinsikabupatenkota")
     public ResponseEntity<?> findByProvinsiKabupatenkota(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTProvinsiKabupatenkota(Perguruantinggi.getProvinsi(), Perguruantinggi.getKabupatenkota()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTProvinsiKabupatenkota(Perguruantinggi.getProvinsi(), Perguruantinggi.getKabupatenkota());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/list/namaprovinsikabupatenkota")
     public ResponseEntity<?> findByNamaProvinsiKabupatenkota(@RequestBody perguruantinggi Perguruantinggi){
-        Map map = new HashMap();
-        map.put("list", ptService.getPTNamaProvinsiKabupatenkota(Perguruantinggi.getNama(), Perguruantinggi.getProvinsi(), Perguruantinggi.getKabupatenkota()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<perguruantinggi> list = ptService.getPTNamaProvinsiKabupatenkota(Perguruantinggi.getNama(), Perguruantinggi.getProvinsi(), Perguruantinggi.getKabupatenkota());
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
 }

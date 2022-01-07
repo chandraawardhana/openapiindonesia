@@ -47,10 +47,7 @@ public class KalurahanController {
             kelurahanResponse.setNamaProv(kelurahan.getKecamatan().getKabupatenkota().getProvinsi().getNama());
             listKel.add(kelurahanResponse);
         }
-
-        Map map = new HashMap();
-        map.put("list", listKel);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKel, HttpStatus.OK);
     }
 
     @PostMapping("/page/all")
@@ -112,9 +109,7 @@ public class KalurahanController {
             listKel.add(kelurahanResponse);
         }
 
-        Map mapResponse = new HashMap();
-        mapResponse.put("list", listKel);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKel, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByIdKecamatan")
@@ -174,10 +169,7 @@ public class KalurahanController {
             kelurahanResponse.setNamaProv(kelurahan.getKecamatan().getKabupatenkota().getProvinsi().getNama());
             listKel.add(kelurahanResponse);
         }
-
-        Map mapResponse = new HashMap();
-        mapResponse.put("list", listKel);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKel, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNama")
@@ -238,10 +230,7 @@ public class KalurahanController {
             kelurahanResponse.setNamaProv(kelurahan.getKecamatan().getKabupatenkota().getProvinsi().getNama());
             listKel.add(kelurahanResponse);
         }
-
-        Map mapResponse = new HashMap();
-        mapResponse.put("list", listKel);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKel, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNamaAndIdKecamatan")

@@ -45,10 +45,7 @@ public class KecamatanController {
             kecamatanResponse.setNamaProv(kecamatan.getKabupatenkota().getProvinsi().getNama());
             listKecamatan.add(kecamatanResponse);
         }
-
-        Map map = new HashMap();
-        map.put("list", listKecamatan);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKecamatan, HttpStatus.OK);
     }
 
     @PostMapping("/page/all")
@@ -105,9 +102,7 @@ public class KecamatanController {
             listKecamatan.add(kecamatanResponse);
         }
 
-        Map<String, Object> mapResponse = new HashMap<String, Object>();
-        mapResponse.put("list", listKecamatan);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKecamatan, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByIdKabupaten")
@@ -164,9 +159,7 @@ public class KecamatanController {
             kecamatanResponse.setNamaProv(kecamatan.getKabupatenkota().getProvinsi().getNama());
             listKecamatan.add(kecamatanResponse);
         }
-        Map<String, Object> mapResponse = new HashMap<String, Object>();
-        mapResponse.put("list", listKecamatan);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKecamatan, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNamaAndIdKabupaten")
@@ -224,9 +217,7 @@ public class KecamatanController {
             listKecamatan.add(kecamatanResponse);
         }
 
-        Map<String, Object> mapResponse = new HashMap<String, Object>();
-        mapResponse.put("list", listKecamatan);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKecamatan, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNama")

@@ -30,15 +30,13 @@ public class ProvinsiController {
 
     @GetMapping("/list/all")
     public ResponseEntity<?> getAllProvinsi() {
-        Map map = new HashMap();
-        map.put("list", provinsiService.findAllProvinsi());
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<Provinsi> provinsi = provinsiService.findAllProvinsi();
+        return new ResponseEntity<>(provinsi, HttpStatus.OK);
     }
     @PostMapping("/list/ByNama")
     public ResponseEntity<?> findProvinsiByNama(@RequestBody Provinsi Provinsi) {
-        Map map = new HashMap();
-        map.put("list", provinsiService.findByNamaProvinsi(Provinsi.getNama()));
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        List<Provinsi> provinsi = provinsiService.findByNamaProvinsi(Provinsi.getNama());
+        return new ResponseEntity<>(ResponeUtil.Respone("200", provinsi, "OK"), HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNama")

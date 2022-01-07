@@ -56,9 +56,7 @@ public class KabupatenKotaController {
             kabupatenResponse.setNamaProv(kabupatenkota.getProvinsi().getNama());
             listKabupatenKota.add(kabupatenResponse);
         }
-        Map map = new HashMap();
-        map.put("list", listKabupatenKota);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKabupatenKota, HttpStatus.OK);
     }
 
     @PostMapping("/page/all")
@@ -109,9 +107,7 @@ public class KabupatenKotaController {
             kabupatenResponse.setNamaProv(kabupatenkota.getProvinsi().getNama());
             listKabupatenKota.add(kabupatenResponse);
         }
-        Map mapResponse = new HashMap();
-        mapResponse.put("list", listKabupatenKota);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKabupatenKota, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNama")
@@ -158,9 +154,7 @@ public class KabupatenKotaController {
             kabupatenResponse.setNamaProv(kabupatenkota.getProvinsi().getNama());
             listKabupatenKota.add(kabupatenResponse);
         }
-        Map mapResponse = new HashMap();
-        mapResponse.put("list", listKabupatenKota);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", mapResponse, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKabupatenKota, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByProvinsi")
@@ -214,9 +208,7 @@ public class KabupatenKotaController {
             listKabupatenKota.add(kabupatenResponse);
         }
 
-        Map map = new HashMap();
-        map.put("list", listKabupatenKota);
-        return new ResponseEntity<>(ResponeUtil.Respone("200", map, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(listKabupatenKota, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNamaAndProvinsi")
