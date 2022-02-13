@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/provinsi")
+@RequestMapping("/v1/provinsi")
 public class ProvinsiController {
 
     @Autowired
@@ -36,7 +36,7 @@ public class ProvinsiController {
     @PostMapping("/list/ByNama")
     public ResponseEntity<?> findProvinsiByNama(@RequestBody Provinsi Provinsi) {
         List<Provinsi> provinsi = provinsiService.findByNamaProvinsi(Provinsi.getNama());
-        return new ResponseEntity<>(ResponeUtil.Respone("200", provinsi, "OK"), HttpStatus.OK);
+        return new ResponseEntity<>(provinsi, HttpStatus.OK);
     }
 
     @PostMapping("/page/ByNama")
