@@ -3,7 +3,7 @@ Openapi Indonesia adalah Servis opensouce yang saya buat untuk digunakan oleh se
 Terdapat beberapa service seperti 
 1. Nama-nama Daerah yang ada di Indonesia. Saya juga sudah menggunakan request kata kunci.
 > Contoh Request  
-> Endpoint : http://206.189.92.234:8010/api/v1/provinsi/page/ByNama 
+> Endpoint : http://api.chandrawardhana.my.id/v1/provinsi/page/ByNama 
 > Request Method: POST
 ```
     {
@@ -34,7 +34,7 @@ Terdapat beberapa service seperti
 
 2. Nama-nama Perguruan Tinggi yang ada di Indonesia beserta Provinsi dan Kabupate/Kota. 
 > Contoh Request  
-> Endpoint : http://206.189.92.234:8010/api/v1/perguruantinggi/page/nama
+> Endpoint : http://api.chandrawardhana.my.id/v1/perguruantinggi/page/nama
 > Request Method: POST
 ```
     {
@@ -68,18 +68,15 @@ Terdapat beberapa service seperti
 # 
 **Spesifikasi Server**
 - OS Ubuntu
-- RAM 4 GB
-- SSD 80 GB
-- Bandwidth 4 TB
+- RAM 2 GB
+- SSD 20 GB
+- Bandwidth Unlimited*
 #
-Untuk sementara IP yang dapat diakses 
-Backend : 206.189.92.234:8010
-
-
-#
-Database Daerah
+Database Daerah (Update)
 Data Provinsi, Kota/Kabupaten, Kecamatan, dan Kelurahan/Desa di Indonesia
-Sumber Database daerah mencakup untuk Provinsi, Kota/Kabupaten, Kecamatan, dan Kelurahan/Desa diambil melalui link berikut : https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia. 
+Sumber Database daerah mencakup untuk Provinsi, Kota/Kabupaten, Kecamatan, dan Kelurahan/Desa 
+[Peraturan Menteri Dalam Negeri No.72 Tahun 2019](https://www.kemendagri.go.id/page/read/48/peraturan-menteri-dalam-negeri-no72-tahun-2019) ([pdf](https://www.kemendagri.go.id/files/2020/PMDN%2072%20TH%202019+lampiran.pdf))
+
 
 Database Perguruan Tinggi
 Sumber Database Perguruan Tinggi di Indonesia diambil dari sumber berikut : https://pddikti.kemdikbud.go.id/pt 
